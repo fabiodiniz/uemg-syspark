@@ -8,8 +8,8 @@ Utilizamos o framework Laravel como Core da aplicação.
 
 ## Interface gráfica
 
-<img src="https://ibb.co/m9vQJv" />
-<img src="https://ibb.co/mPa35a" />
+<img src="https://image.ibb.co/cEf9dv/Screen_Shot_2017_03_17_at_9_12_06_PM.png" />
+<img src="https://image.ibb.co/b3SBrF/Screen_Shot_2017_03_17_at_9_12_30_PM.png" />
 
 ## License
 
