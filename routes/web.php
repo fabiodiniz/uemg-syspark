@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function(){
+    return redirect('/entrada');
+});
+
+Route::get('/entrada', function () {
     return view('entrada');
 });
 

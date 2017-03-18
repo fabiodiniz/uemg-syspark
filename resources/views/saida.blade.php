@@ -60,7 +60,7 @@
                 float: right;
             }
 
-            form {
+            form > .container {
                 display: flex;
             }
             .campo {
@@ -78,6 +78,9 @@
                 border: 1px solid #B4B4B4;
                 background: #D2D2D2;
             }
+            .campo.botao input {
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
@@ -93,19 +96,21 @@
                 </div>
             </div>
             <form action="/entrada" method="post">
-                <div class="campo botao -cinzaclaro">
-                  <input type="radio" name="carro" value="1"> HDG-2349 (Astra)
+                <div class="container">
+                    <label class="campo botao -cinzaclaro">
+                      <input type="radio" name="carro" value="1"> HDG-2349 (Astra/Branco)
+                    </label>
+                    <label class="campo botao -cinzaclaro">
+                      <input type="radio" name="carro" value="1"> HDG-2349 (Astra/Branco)
+                    </label>
+                    <label class="campo botao -cinzaclaro">
+                      <input type="radio" name="carro" value="1"> HDG-2349 (Astra/Branco)
+                    </label>
                 </div>
-                <div class="campo botao -cinzaclaro">
-                  <input type="radio" name="carro" value="1"> HDG-2349 (Astra)
-                </div>
-                <div class="campo botao -cinzaclaro">
-                  <input type="radio" name="carro" value="1"> HDG-2349 (Astra)
-                </div>
+                <span style="margin-left: 20px">Horário de saída: 17h20</span>
+                <button type="submit" class="botao -ativo -direita">Confirmar saída</button>
+                <button type="reset" class="botao -vermelho -direita">Cancelar</button>
             </form>
-            <span style="margin-left: 20px">Horário de saída: 17h20</span>
-            <button type="submit" class="botao -ativo -direita">Confirmar saída</button>
-            <button type="reset" class="botao -vermelho -direita">Cancelar</button>
         </div>
     </body>
 </html>

@@ -55,7 +55,7 @@
                 float: right;
             }
 
-            form {
+            form > .container {
                 display: flex;
             }
             .campo {
@@ -88,31 +88,33 @@
                 </div>
             </div>
             <form action="/entrada" method="post">
-                <div class="campo">
-                    <label for="placa">Placa:</label>
-                    <input
-                        id="placa"
-                        name="placa"
-                        type="text">
+                <div class="container">
+                    <div class="campo">
+                        <label for="placa">Placa:</label>
+                        <input
+                            id="placa"
+                            name="placa"
+                            type="text">
+                    </div>
+                    <div class="campo">
+                        <label for="modelo">Modelo:</label>
+                        <input
+                            id="modelo"
+                            name="modelo"
+                            type="text">
+                    </div>
+                    <div class="campo">
+                        <label for="cor">Cor:</label>
+                        <input
+                            id="cor"
+                            name="cor"
+                            type="text">
+                    </div>
                 </div>
-                <div class="campo">
-                    <label for="modelo">Modelo:</label>
-                    <input
-                        id="modelo"
-                        name="modelo"
-                        type="text">
-                </div>
-                <div class="campo">
-                    <label for="cor">Cor:</label>
-                    <input
-                        id="cor"
-                        name="cor"
-                        type="text">
-                </div>
+                <span style="margin-left: 20px">Horário de entrada: 16h20</span>
+                <button type="submit" class="botao -ativo -direita">Confirmar entrada</button>
+                <button type="reset" class="botao -vermelho -direita">Cancelar</button>
             </form>
-            <span style="margin-left: 20px">Horário de entrada: 16h20</span>
-            <button type="submit" class="botao -ativo -direita">Confirmar entrada</button>
-            <button type="reset" class="botao -vermelho -direita">Cancelar</button>
         </div>
     </body>
 </html>
