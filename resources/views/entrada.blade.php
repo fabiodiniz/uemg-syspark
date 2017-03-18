@@ -111,7 +111,7 @@
                 </div>
             </form>
             <span style="margin-left: 20px">Horário de entrada: 16h20</span>
-            <button type="submit" class="botao -ativo -direita">Add Entrada</button>
+            <button type="submit" class="botao -ativo -direita">Confirmar entrada</button>
             <button type="reset" class="botao -vermelho -direita">Cancelar</button>
         </div>
     </body>
