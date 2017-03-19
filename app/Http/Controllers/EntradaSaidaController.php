@@ -13,7 +13,7 @@ class EntradaSaidaController extends Controller
 {
     public function __construct()
     {
-        $this->totalVagas = 50;
+        $this->totalVagas = 5;
         $this->vagasOcupadas = EntradaSaida::where('horario_saida', null)->count();
         $this->vagasDisponiveis = $this->totalVagas - $this->vagasOcupadas;
     }

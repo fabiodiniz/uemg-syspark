@@ -11,83 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-            div, input, form, a, img {
-                box-sizing: border-box;
-            }
-            #container {
-                width: 802px;
-                margin: auto;
-            }
-            #menu {
-                margin: 10px 0;
-            }
-            .botao {
-                display: inline-block;
-                font-size: 17px;
-                padding: 20px;
-                border-radius: 5px;
-                background: #47972C;
-                color: #FFF;
-                text-decoration: none;
-                border: none;
-                margin: 5px;
-                cursor: pointer;
-            }
-            .botao.-ativo {
-                background: #8BB939;
-                font-weight: bold;
-            }
-            .botao.-cinza {
-                background: #737373;
-            }
-            .botao.-cinzaclaro {
-                background: #D2D2D2;
-                color: #000;
-                font-weight: bold;
-            }
-            .botao.-vermelho {
-                background: #9B0008;
-            }
-            .botao.-direita {
-                float: right;
-            }
-
-            form > .container {
-                display: flex;
-                flex-flow: wrap;
-            }
-            .campo {
-                flex-grow: 1;
-                padding: 10px;
-            }
-            .campo label {
-                font-weight: bold;
-            }
-            .campo input {
-                display: block;
-                width: 100%;
-                border-radius: 5px;
-                padding: 10px;
-                border: 1px solid #B4B4B4;
-                background: #D2D2D2;
-            }
-            .campo.botao input {
-                cursor: pointer;
-            }
-            .campo.botao little {
-                display: block;
-                font-weight: lighter;
-            }
-        </style>
+        <link rel="stylesheet" href="/css/syspark.css">
     </head>
     <body>
         <div id="container">
@@ -122,7 +46,7 @@
                         @endif
                             {{ $automovel->placa }}
                             <little>Modelo: {{ $automovel->modelo }}</little>
-                            <little>Cor: {{ $automovel->cor }})</little>
+                            <little>Cor: {{ $automovel->cor }}</little>
                             <little>Entrada: {{ $automovel->horario_entrada }}</little>
                             <little>Saída: {{ $automovel->horario_saida }}</little>
                         </div>
