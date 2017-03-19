@@ -62,7 +62,7 @@ class EntradaSaidaController extends Controller
     public function saidaView() {
         return view('saida', [
             'vagasDisponiveis' => $this->vagasDisponiveis,
-            'automoveis' => EntradaSaida::where('horario_saida', null)->get()
+            'automoveis' => EntradaSaida::orderBy('id', 'desc')->where('horario_saida', null)->get()
         ]);
     }
 

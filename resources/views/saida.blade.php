@@ -32,6 +32,7 @@
             }
             .botao {
                 display: inline-block;
+                font-size: 17px;
                 padding: 20px;
                 border-radius: 5px;
                 background: #47972C;

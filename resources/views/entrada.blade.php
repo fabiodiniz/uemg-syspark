@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <button type="submit" class="botao -ativo -direita">Confirmar entrada</button>
-                <button type="reset" class="botao -vermelho -direita">Cancelar</button>
+                <button type="reset" class="botao -vermelho -direita">Limpar</button>
             </form>
         </div>
     </body>

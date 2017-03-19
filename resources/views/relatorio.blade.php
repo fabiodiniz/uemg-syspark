@@ -32,6 +32,7 @@
             }
             .botao {
                 display: inline-block;
+                font-size: 17px;
                 padding: 20px;
                 border-radius: 5px;
                 background: #47972C;
@@ -127,8 +128,6 @@
                         </div>
                     @endforeach
                 </div>
-                <button type="submit" class="botao -ativo -direita">Confirmar saída</button>
-                <button type="reset" class="botao -vermelho -direita">Cancelar</button>
             </form>
         </div>
     </body>
