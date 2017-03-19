@@ -93,12 +93,21 @@
                 <a href="/" class="botao">Entrada</a>
                 <a href="/saida" class="botao -ativo">Saída</a>
                 <div class="botao -cinza -direita">
-                    4 vagas disponíveis
+                    @if ($vagasDisponiveis > 1)
+                        {{ $vagasDisponiveis }} vagas disponíveis
+                    @elseif ($vagasDisponiveis == 1)
+                        {{ $vagasDisponiveis }} vaga disponível
+                    @else
+                        Nenhuma vaga disponível
+                    @endif
                 </div>
             </div>
             <form action="/saida" method="post">
                 {{ csrf_field() }}
                 <div class="container">
+                    @if (count($automoveis) < 1)
+                        <h2>Nenhum automóvel estacionado.</h2>
+                    @endif
                     @foreach ($automoveis as $automovel)
                         <label class="campo botao -cinzaclaro">
                           <input type="radio" name="carro" value="{{ $automovel->id }}"> {{ $automovel->placa }} ({{ $automovel->modelo }}/{{ $automovel->cor }})

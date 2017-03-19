@@ -86,10 +86,25 @@
                 <a href="/" class="botao -ativo">Entrada</a>
                 <a href="/saida" class="botao">Saída</a>
                 <div class="botao -cinza -direita">
-                    5 vagas disponíveis
+                    @if ($vagasDisponiveis > 1)
+                        {{ $vagasDisponiveis }} vagas disponíveis
+                    @elseif ($vagasDisponiveis == 1)
+                        {{ $vagasDisponiveis }} vaga disponível
+                    @else
+                        Nenhuma vaga disponível
+                    @endif
                 </div>
             </div>
             <form action="/entrada" method="post">
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="container">
                     {{ csrf_field() }}
                     <div class="campo">

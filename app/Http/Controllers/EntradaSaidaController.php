@@ -5,13 +5,32 @@ namespace App\Http\Controllers;
 use App\EntradaSaida;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Input;
+use Illuminate\Validation\Rule;
 use Carbon;
 use Redirect;
 
 class EntradaSaidaController extends Controller
 {
+    public function __construct()
+    {
+        $this->totalVagas = 50;
+        $this->vagasOcupadas = EntradaSaida::where('horario_saida', null)->count();
+        $this->vagasDisponiveis = $this->totalVagas - $this->vagasOcupadas;
+    }
+
     public function entrada(Request $request)
     {
+        $this->validate($request, [
+            'placa' => [
+                'required',
+                Rule::unique('entrada_saida')->where(function ($query) {
+                    $query->where('horario_saida', null);
+                })
+            ],
+            'modelo' => 'required|max:20',
+            'cor' => 'required|max:20'
+        ]);
+
     		$entrada = EntradaSaida::create(array(
     				'placa' => $request->get('placa'),
     				'modelo' => $request->get('modelo'),
@@ -35,11 +54,14 @@ class EntradaSaidaController extends Controller
     }
 
     public function entradaView() {
-        return view('entrada');
+        return view('entrada', [
+            'vagasDisponiveis' => $this->vagasDisponiveis
+        ]);
     }
 
     public function saidaView() {
         return view('saida', [
+            'vagasDisponiveis' => $this->vagasDisponiveis,
             'automoveis' => EntradaSaida::where('horario_saida', null)->get()
         ]);
     }

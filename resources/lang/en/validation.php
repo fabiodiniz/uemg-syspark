@@ -97,11 +97,12 @@ return [
     |
     */
 
-    'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
-    ],
+    'custom' => array(
+        'placa.required' => 'Preencha a placa do automóvel.',
+        'placa.unique' => 'Este automóvel já está estacionado.',
+        'modelo.required'  => 'Preencha o modelo do automóvel.',
+        'cor.required'  => 'Preencha a cor do automóvel.',
+    ),
 
     /*
     |--------------------------------------------------------------------------
