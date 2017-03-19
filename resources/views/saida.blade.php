@@ -62,6 +62,7 @@
 
             form > .container {
                 display: flex;
+                flex-flow: wrap;
             }
             .campo {
                 flex-grow: 1;
@@ -95,19 +96,15 @@
                     4 vagas disponíveis
                 </div>
             </div>
-            <form action="/entrada" method="post">
+            <form action="/saida" method="post">
+                {{ csrf_field() }}
                 <div class="container">
-                    <label class="campo botao -cinzaclaro">
-                      <input type="radio" name="carro" value="1"> HDG-2349 (Astra/Branco)
-                    </label>
-                    <label class="campo botao -cinzaclaro">
-                      <input type="radio" name="carro" value="1"> HDG-2349 (Astra/Branco)
-                    </label>
-                    <label class="campo botao -cinzaclaro">
-                      <input type="radio" name="carro" value="1"> HDG-2349 (Astra/Branco)
-                    </label>
+                    @foreach ($automoveis as $automovel)
+                        <label class="campo botao -cinzaclaro">
+                          <input type="radio" name="carro" value="{{ $automovel->id }}"> {{ $automovel->placa }} ({{ $automovel->modelo }}/{{ $automovel->cor }})
+                        </label>
+                    @endforeach
                 </div>
-                <span style="margin-left: 20px">Horário de saída: 17h20</span>
                 <button type="submit" class="botao -ativo -direita">Confirmar saída</button>
                 <button type="reset" class="botao -vermelho -direita">Cancelar</button>
             </form>

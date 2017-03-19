@@ -32,6 +32,7 @@
             }
             .botao {
                 display: inline-block;
+                font-size: 17px;
                 padding: 20px;
                 border-radius: 5px;
                 background: #47972C;
@@ -70,8 +71,9 @@
                 width: 100%;
                 border-radius: 5px;
                 padding: 10px;
+                font-size: 17px;
                 border: 1px solid #B4B4B4;
-                background: #D2D2D2;
+                background: #CCC;
             }
         </style>
     </head>
@@ -89,6 +91,7 @@
             </div>
             <form action="/entrada" method="post">
                 <div class="container">
+                    {{ csrf_field() }}
                     <div class="campo">
                         <label for="placa">Placa:</label>
                         <input
@@ -111,7 +114,6 @@
                             type="text">
                     </div>
                 </div>
-                <span style="margin-left: 20px">Horário de entrada: 16h20</span>
                 <button type="submit" class="botao -ativo -direita">Confirmar entrada</button>
                 <button type="reset" class="botao -vermelho -direita">Cancelar</button>
             </form>

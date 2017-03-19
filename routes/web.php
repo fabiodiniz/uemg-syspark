@@ -12,13 +12,10 @@
 */
 
 Route::get('/', function(){
-    return redirect('/entrada');
+    return redirect('entrada');
 });
 
-Route::get('/entrada', function () {
-    return view('entrada');
-});
-
-Route::get('/saida', function () {
-    return view('saida');
-});
+Route::get('entrada', 'EntradaSaidaController@entradaView');
+Route::post('entrada', 'EntradaSaidaController@entrada');
+Route::get('saida', 'EntradaSaidaController@saidaView');
+Route::post('saida', 'EntradaSaidaController@saida');
