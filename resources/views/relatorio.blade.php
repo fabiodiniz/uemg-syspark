@@ -82,6 +82,10 @@
             .campo.botao input {
                 cursor: pointer;
             }
+            .campo.botao little {
+                display: block;
+                font-weight: lighter;
+            }
         </style>
     </head>
     <body>
@@ -91,8 +95,8 @@
             </header>
             <div id="menu">
                 <a href="/entrada" class="botao">Entrada</a>
-                <a href="/saida" class="botao -ativo">Saída</a>
-                <a href="/relatorio" class="botao">Relatório</a>
+                <a href="/saida" class="botao">Saída</a>
+                <a href="/relatorio" class="botao -ativo">Relatório</a>
                 <div class="botao -cinza -direita">
                     @if ($vagasDisponiveis > 1)
                         {{ $vagasDisponiveis }} vagas disponíveis
@@ -110,9 +114,17 @@
                         <h2>Nenhum automóvel estacionado.</h2>
                     @endif
                     @foreach ($automoveis as $automovel)
-                        <label class="campo botao -cinzaclaro">
-                          <input type="radio" name="carro" value="{{ $automovel->id }}"> {{ $automovel->placa }} ({{ $automovel->modelo }}/{{ $automovel->cor }})
-                        </label>
+                        @if ($automovel->horario_saida)
+                            <div class="campo botao -cinzaclaro">
+                        @else
+                            <div class="campo botao -cinza">
+                        @endif
+                            {{ $automovel->placa }}
+                            <little>Modelo: {{ $automovel->modelo }}</little>
+                            <little>Cor: {{ $automovel->cor }})</little>
+                            <little>Entrada: {{ $automovel->horario_entrada }}</little>
+                            <little>Saída: {{ $automovel->horario_saida }}</little>
+                        </div>
                     @endforeach
                 </div>
                 <button type="submit" class="botao -ativo -direita">Confirmar saída</button>

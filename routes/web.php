@@ -19,3 +19,4 @@ Route::get('entrada', 'EntradaSaidaController@entradaView');
 Route::post('entrada', 'EntradaSaidaController@entrada');
 Route::get('saida', 'EntradaSaidaController@saidaView');
 Route::post('saida', 'EntradaSaidaController@saida');
+Route::get('relatorio', 'EntradaSaidaController@relatorioView');
