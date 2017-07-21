@@ -15,14 +15,14 @@
     </head>
     <body>
         <div id="container">
-            <header>
+            <header style="width: 100%">
                 <img src="/images/header.jpg" width="100%" />
             </header>
             <div id="menu">
                 <a href="/entrada" class="botao -ativo">Entrada</a>
                 <a href="/saida" class="botao">Saída</a>
                 <a href="/relatorio" class="botao">Relatório</a>
-                <div class="botao -cinza -direita">
+                <div class="botao -cinza -direita -negrito">
                     @if ($vagasDisponiveis > 1)
                         {{ $vagasDisponiveis }} vagas disponíveis
                     @elseif ($vagasDisponiveis == 1)

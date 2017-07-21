@@ -11,7 +11,8 @@
         box-sizing: border-box;
     }
     #container {
-        width: 802px;
+        width: 100%;
+        max-width: 800px;
         margin: auto;
     }
     #menu {
@@ -20,7 +21,7 @@
     .botao {
         display: inline-block;
         font-size: 17px;
-        padding: 20px;
+        padding: 10px;
         border-radius: 5px;
         background: #47972C;
         color: #FFF;
@@ -47,14 +48,22 @@
     .botao.-direita {
         float: right;
     }
+    .botao.-negrito {
+        font-weight: 900;
+    }
+
+    form > h2 {
+        padding: 10px;
+    }
 
     form > .container {
+        width: 100%;
         display: flex;
         flex-flow: wrap;
+        padding: 10px;
     }
     .campo {
         flex-grow: 1;
-        padding: 10px;
     }
     .campo label {
         font-weight: bold;
